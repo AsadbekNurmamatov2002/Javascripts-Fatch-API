@@ -1,7 +1,7 @@
-console.log("hello")
+
 const userlist=document.getElementById("userlist")
 
-const urlUserList="https://jsonplaceholder.typicode.com/users/1"
+const urlUserList=`https://jsonplaceholder.typicode.com/todos/`
 
 fetch (urlUserList)
     .then(response => {
@@ -12,9 +12,8 @@ fetch (urlUserList)
       })
       .then(userData => {
         // Process the retrieved user data
-        console.log(userData.id)
-        userlist.textContent=userData.email + userData.username
-		
+        console.log(userData.title)
+        userlist.textContent=userData.title
       })
       .catch(error => {
         console.error('Error:', error);
